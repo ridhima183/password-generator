@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #222;
+}
+
+.password-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.password-box input {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+.password-box button,
+.generate {
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.password-box button {
+  padding: 0 16px;
+  background: #4f46e5;
+  color: white;
+}
+
+.password-box button:hover,
+.generate:hover {
+  background: #3730a3;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.control label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #333;
+  font-size: 15px;
+}
+
+.generate {
+  margin-top: 8px;
+  padding: 14px;
+  background: #4f46e5;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
