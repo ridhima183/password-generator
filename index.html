@@ -7,40 +7,48 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <h1>Password Generator</h1>
+  <main class="wrapper">
+    <article class="generator-card">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
 
-      <div class="password-box">
-        <input type="text" id="password" placeholder="Generated password" readonly />
-        <button id="copyBtn">Copy</button>
-      </div>
+      <!-- Output Section -->
+      <section class="display-group" aria-live="polite">
+        <input type="text" id="password" placeholder="Your secure password" readonly aria-label="Generated password" />
+        <button id="copyBtn" type="button">Copy</button>
+      </section>
 
-      <div class="controls">
-        <div class="control">
-          <label for="length">Password Length: <span id="lengthValue">12</span></label>
+      <!-- Configurations Form -->
+      <form id="generatorForm" class="options-group" onsubmit="event.preventDefault();">
+        <div class="range-field">
+          <label for="length">Password Length (<output id="lengthValue">12</output>)</label>
           <input type="range" id="length" min="4" max="32" value="12" />
         </div>
 
-        <label class="check">
-          <input type="checkbox" id="uppercase" checked />
-          Include Uppercase
-        </label>
+        <fieldset class="checkbox-fieldset">
+          <legend class="sr-only">Character Options</legend>
+          
+          <label class="checkbox-label">
+            <input type="checkbox" id="uppercase" checked />
+            <span>Uppercase Letters</span>
+          </label>
 
-        <label class="check">
-          <input type="checkbox" id="numbers" checked />
-          Include Numbers
-        </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="numbers" checked />
+            <span>Numbers (0-9)</span>
+          </label>
 
-        <label class="check">
-          <input type="checkbox" id="symbols" checked />
-          Include Symbols
-        </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="symbols" checked />
+            <span>Special Characters</span>
+          </label>
+        </fieldset>
 
-        <button id="generateBtn" class="generate">Generate Password</button>
-      </div>
-    </div>
-  </div>
+        <button id="generateBtn" type="submit" class="btn-primary">Generate</button>
+      </form>
+    </article>
+  </main>
 
   <script src="script.js"></script>
 </body>
