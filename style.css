@@ -2,25 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   background: linear-gradient(135deg, #667eea, #764ba2);
-}
-
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
   padding: 20px;
 }
 
-.card {
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.generator-card {
   width: 100%;
   max-width: 420px;
   background: #ffffff;
@@ -33,50 +32,64 @@ h1 {
   text-align: center;
   margin-bottom: 24px;
   color: #222;
+  font-size: 1.8rem;
 }
 
-.password-box {
+.display-group {
   display: flex;
   gap: 10px;
   margin-bottom: 22px;
 }
 
-.password-box input {
+.display-group input {
   flex: 1;
   padding: 14px;
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 16px;
-  outline: none;
+  background: #f9f9f9;
 }
 
-.password-box button,
-.generate {
+.display-group input:focus,
+input[type="range"]:focus {
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
+}
+
+#copyBtn,
+.btn-primary {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.password-box button {
-  padding: 0 16px;
   background: #4f46e5;
   color: white;
+  transition: background 0.2s ease, transform 0.1s ease;
 }
 
-.password-box button:hover,
-.generate:hover {
+#copyBtn {
+  padding: 0 20px;
+  font-weight: 600;
+}
+
+#copyBtn:hover,
+.btn-primary:hover {
   background: #3730a3;
 }
 
-.controls {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+#copyBtn:active,
+.btn-primary:active {
+  transform: scale(0.98);
 }
 
-.control label {
-  display: block;
+.options-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.range-field label {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 8px;
   color: #333;
   font-weight: 600;
@@ -84,21 +97,48 @@ h1 {
 
 input[type="range"] {
   width: 100%;
+  accent-color: #4f46e5;
+  cursor: pointer;
 }
 
-.check {
+.checkbox-fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.checkbox-label {
   display: flex;
   align-items: center;
   gap: 10px;
   color: #333;
   font-size: 15px;
+  cursor: pointer;
+  user-select: none;
 }
 
-.generate {
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5;
+  cursor: pointer;
+}
+
+.btn-primary {
   margin-top: 8px;
   padding: 14px;
-  background: #4f46e5;
-  color: white;
   font-size: 16px;
   font-weight: bold;
 }
