@@ -116,7 +116,7 @@ Then just:
 
 This project is **open source** and free to use for learning purposes 🎓💕
 
-Made with 🩷 and lots of ☕
+Made with 🩷 and lots of .....☕
 
 <img src="https://forthebadge.com/images/badges/built-with-love.svg" />
 
