@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔐 ✨ Password Generator ✨ 🔐
+# 🔐 ✨ Password Generator.... ✨ 🔐
 
 ### *A cute little tool that whips up strong, random passwords for you!* 💖
 
